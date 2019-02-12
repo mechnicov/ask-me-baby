@@ -8,6 +8,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'jquery-rails'
 gem 'faker'
 gem 'rails-i18n', '~> 5.1'
+gem 'translit'
 
 group :development, :test do
   gem 'byebug'
