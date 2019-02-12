@@ -16,10 +16,11 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  border: 1px solid #00b6ad;
+  border: 1px solid #957d95;
   padding: 7.5px 10px;
   border-radius: 3px;
   font-size: 16px;
+  background: #eccfc3;
 }
 
 .form-action {

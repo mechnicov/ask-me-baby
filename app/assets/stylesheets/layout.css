@@ -1,14 +1,14 @@
 body {
- background: #262732;
+ background: #957d95;
  color: white;
 }
 
 a {
-  color: #005a55;
+  color: #904c77;
 }
 
 .header {
-  background: white;
+  background: #e49ab0;
   overflow: hidden;
   vertical-align: baseline;
   padding: 10px 40px;
@@ -30,11 +30,11 @@ a {
 
 .content {
   padding: 0 40px;
-  color: #2e2f41;
+  color: #904c77;
 }
 
 .content-wrapper {
-  background: white;
+  background: #ecb8a5;
   padding: 10px;
 }
 

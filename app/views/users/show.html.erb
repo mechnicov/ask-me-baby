@@ -9,7 +9,7 @@
     @<%= @user.username %>
   </h2>
   <div class="user-ask-button container text-center">
-    <%= link_to "Спроси меня", '', class: 'button button-light', id: 'ask-button' %>
+    <%= link_to '¿Есть вопрос?', '', class: 'button button-light', id: 'ask-button' %>
   </div>
 </div>
 
@@ -19,11 +19,11 @@
       <%= form_for @new_question do |f| %>
         <%= f.hidden_field :user_id %>
         <div class="form-field">
-          <%= f.label "Ваш вопрос для @#{@user.username}", class: 'form-label' %>
+          <%= f.label "Вопрос пользователю @#{@user.username}", class: 'form-label' %>
           <%= f.text_area :text, class: 'form-textarea' %>
         </div>
         <div class="form-action">
-          <%= submit_tag 'Задать вопрос', class: 'button button-small button-dark' %>
+          <%= submit_tag '¿Спроси вопрос?', class: 'button button-small button-dark' %>
         </div>
       <% end %>
     </div>
