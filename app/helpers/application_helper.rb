@@ -10,4 +10,8 @@ module ApplicationHelper
   def questions_qty(user)
     I18n.t :question, count: user.questions.count
   end
+
+  def question_time(question)
+    l(question.created_at, format: '%-d %B %Y %k:%M')
+  end
 end
