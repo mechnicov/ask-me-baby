@@ -9,19 +9,21 @@ class User < ApplicationRecord
   attr_accessor :password
 
   has_many :questions
-  validates :username, presence: true, uniqueness: { case_sensitive: false },
+  validates :username, presence: true, uniqueness: true,
                        length: { maximum: 40 }, format: { with: VALID_USERNAME_REGEX }
-  validates :email, presence: true, uniqueness: { case_sensitive: false },
+  validates :email, presence: true, uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX }
 
   validates :password, presence: true, on: :create, confirmation: true
-  before_save :encrypt_password, :downcase_email_and_username
+  before_validation :downcase_email_and_username
+  before_save :encrypt_password
 
   def self.hash_to_string(password_hash)
     password_hash.unpack('H*')[0]
   end
 
   def self.authenticate(email, password)
+    email.downcase!
     user = find_by(email: email)
     return nil unless user.present?
 
@@ -48,7 +50,7 @@ class User < ApplicationRecord
   end
 
   def downcase_email_and_username
-    email.downcase!
-    username.downcase!
+    email.downcase! if email.present?
+    username.downcase! if username.present?
   end
 end
