@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.2'
 gem 'sqlite3', '~> 1.3.6'
 gem 'jquery-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'
