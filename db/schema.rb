@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_02_12_132934) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "questions", force: :cascade do |t|
     t.string "text"
     t.string "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
@@ -34,4 +37,5 @@ ActiveRecord::Schema.define(version: 2019_02_12_132934) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "questions", "users"
 end

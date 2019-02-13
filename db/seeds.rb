@@ -1,5 +1,5 @@
 10.times do
-  name  = Faker::Name.name
+  name  = Faker::Name.name.gsub(/ё/, 'е')
   translit = Translit.convert(name)
   username = Faker::Internet.username(translit, '_')
   email = Faker::Internet.email(translit)
