@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %link{:href => "", :rel => "stylesheet"}/
+    %title ¿Спроси вопрос?
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Rubik:400,400i,700,700i&subset=cyrillic', 'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .header
+      .container
+        .header-logo
+          %h1.header-title= link_to "¿Спроси вопрос?", root_url
+    .content
+      .container
+        = yield

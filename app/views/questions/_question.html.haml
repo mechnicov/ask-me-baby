@@ -1,0 +1,9 @@
+.question
+  .question-content
+    .question-text.text-lead
+      = question.text
+    - if question.answer.present?
+      .question-answer.text-lead
+        = question.answer
+    .question-date
+      = question_time(question)

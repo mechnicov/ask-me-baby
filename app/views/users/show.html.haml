@@ -1,0 +1,30 @@
+.user-header.text-center
+  %h1.title-medium
+    = @user.name
+  .user-image-div
+    = image_tag user_avatar(@user), class: 'user-image', alt: '[Фото]'
+  %h2.title-small.buffer-both
+    @#{@user.username}
+  .user-ask-button.container.text-center
+    = link_to '¿Есть вопрос?', '', class: 'button button-light', id: 'ask-button'
+.user-details
+  .user-statistics.container.text-center
+    = questions_qty(@user)
+#ask-form.user-question-form-div.column-1-4.column-1-4-right
+  .user-question-form.buffer-both
+    .form
+      = form_for @new_question do |f|
+        = f.hidden_field :user_id
+        .form-field
+          = f.label "Вопрос пользователю @#{@user.username}", class: 'form-label'
+          = f.text_area :text, class: 'form-textarea'
+        .form-action
+          = submit_tag '¿Спроси вопрос?', class: 'button button-small button-dark'
+.column-3-4
+  .user-questions.buffer-both
+    .questions-list
+      - if @questions.count.zero?
+        = render partial: 'questions/question_blank'
+      - else
+        - @questions.each do |question|
+          = render partial: 'questions/question', object: question
