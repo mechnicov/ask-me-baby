@@ -1,8 +1,7 @@
 10.times do
-  name  = Faker::Name.name.gsub(/ё/, 'е')
-  translit = Translit.convert(name)
-  username = Faker::Internet.username(translit, '_')
-  email = Faker::Internet.email(translit)
+  name  = Faker::Name.name
+  username = Faker::Internet.username(name, '_')
+  email = Faker::Internet.email(name)
   password = '12345'
   User.create!(name:  name, username: username, email: email,
                password: password, password_confirmation: password)

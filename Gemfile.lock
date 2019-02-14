@@ -144,7 +144,6 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
-    translit (0.1.5)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     web-console (3.7.0)
@@ -169,7 +168,6 @@ DEPENDENCIES
   pg
   rails (~> 5.2.2)
   rails-i18n (~> 5.1)
-  translit
   web-console (>= 3.3.0)
   will_paginate (~> 3.1.0)
 

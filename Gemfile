@@ -8,7 +8,6 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'faker'
 gem 'rails-i18n', '~> 5.1'
-gem 'translit'
 gem 'haml-rails', '~> 1.0'
 gem 'will_paginate', '~> 3.1.0'
 
