@@ -26,5 +26,7 @@
       - if @questions.count.zero?
         = render partial: 'questions/question_blank'
       - else
-        - @questions.each do |question|
-          = render partial: 'questions/question', object: question
+        = render partial: 'questions/question', collection: @questions
+  - unless @questions.count.zero?
+    .questions-pagination
+      = will_paginate @questions

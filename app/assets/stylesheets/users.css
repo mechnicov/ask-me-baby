@@ -53,6 +53,10 @@
   background: #e49ab0;
 }
 
+.user-questions-pagination {
+
+}
+
 @media (max-width: 960px) {
   .user-question-form {
     margin-left: 0;

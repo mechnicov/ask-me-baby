@@ -7,5 +7,6 @@
  *= require layout
  *= require users
  *= require questions
+ *= require questions-pagination
  *= require_self
  */
