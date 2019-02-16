@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include Pagy::Backend
+
   def index
     @users = User.all.order(:id)
   end
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @questions = @user.questions.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    @pagy, @questions = pagy(@user.questions.order(created_at: :desc), items: 3)
     @new_question = Question.new
   end
 end

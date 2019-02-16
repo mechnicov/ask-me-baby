@@ -8,34 +8,29 @@
   border-bottom: 10px solid #e49ab0;
 }
 
-.questions-pagination a, .questions-pagination span, .questions-pagination em {
-  padding: .2em .5em;
+.questions-pagination .active {
+  font-style: normal;
+  font-weight: bold;
+  color: #e49ab0;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .questions-pagination .disabled {
   color: #e49ab0;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
-.questions-pagination .current {
-  font-style: normal;
-  font-weight: bold;
+.questions-pagination .gap {
   color: #e49ab0;
 }
 
 .questions-pagination a {
-  color: #904c77;
-  text-decoration: none;
+  padding: .2em 1em .2em 1em;
 }
 
 .questions-pagination a:hover, .questions-pagination a:focus {
   background: #e49ab0;
   color: #eccfc3;
-}
-
-.questions-pagination .previous_page {
-  margin-right: .1em;
-}
-
-.questions-pagination .next_page {
-  margin-left: .1em;
 }

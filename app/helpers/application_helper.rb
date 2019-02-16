@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def user_avatar(user)
     if user.avatar_url.present?
       user.avatar_url

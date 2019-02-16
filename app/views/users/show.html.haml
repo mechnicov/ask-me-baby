@@ -29,4 +29,4 @@
         = render partial: 'questions/question', collection: @questions
   - unless @questions.count.zero?
     .questions-pagination
-      = will_paginate @questions
+      = pagy_plain_responsive_nav(@pagy).html_safe

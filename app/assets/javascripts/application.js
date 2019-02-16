@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require pagy
 //= require_tree .
 
 $(function(){
@@ -19,4 +20,8 @@ $(function(){
     $('#ask-form').slideToggle(300);
     return false;
   });
+});
+
+$( window ).load(function() {
+  Pagy.init()
 });
