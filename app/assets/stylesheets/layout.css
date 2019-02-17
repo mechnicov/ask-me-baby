@@ -27,6 +27,12 @@ a {
   font-size: 20px;
 }
 
+.header-nav-link {
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
 .content {
   padding: 0 40px;
   color: #904c77;

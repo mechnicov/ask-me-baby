@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   include Pagy::Backend
 
   before_action :load_user, except: [:index, :new, :create]
+  before_action :redirect_current_user, only: [:new, :create]
+  before_action :authorize_user, only: [:edit, :update]
 
   def index
     @users = User.all.order(:id)
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url, notice: 'Пользователь успешно зарегистрирован!'
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_url(@user), notice: 'Данные обновлены'
     else
-      render 'edit'
+      render :edit
     end
   end
 
@@ -38,12 +40,20 @@ class UsersController < ApplicationController
 
   private
 
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation,
+                                 :name, :username, :avatar_url)
+  end
+
   def load_user
     @user ||= User.find params[:id]
   end
 
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation,
-                                 :name, :username, :avatar_url)
+  def authorize_user
+    reject_user unless @user == current_user
+  end
+
+  def redirect_current_user
+    redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
   end
 end

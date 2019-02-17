@@ -1,0 +1,14 @@
+.container.content-wrapper.buffer-both
+  %h1.title-medium
+    Войти на сайт
+  .column-1-2
+    .form
+      = form_tag sessions_url do
+        .form-field
+          = label_tag :email, 'Электронная почта', class: 'form-label'
+          = text_field_tag :email, params[:email], class: 'form-text-field'
+        .form-field
+          = label_tag :password, 'Пароль', class: 'form-label'
+          = password_field_tag :password, '', class: 'form-text-field'
+        .form-action
+          = submit_tag "Войти", class: 'button button-dark button-small'
