@@ -16,7 +16,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX }
   validates :name, presence: true
-  validates :password, presence: true, on: :create, confirmation: true
+  validates :password, presence: true, on: :create
+  validates_confirmation_of :password
   before_validation :downcase_email_and_username
   before_save :encrypt_password
 
