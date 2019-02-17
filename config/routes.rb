@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   # get 'users/show'
   # get '/show', to: 'users#show'
   root 'users#index'
-  resources :users
+  resources :users, except: :destroy
   resources :questions
 end

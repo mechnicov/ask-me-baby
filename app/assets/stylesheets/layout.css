@@ -1,6 +1,5 @@
 body {
  background: #957d95;
- color: white;
 }
 
 a {
@@ -40,5 +39,10 @@ a {
 
 .flash-alert {
   font-size: 20px;
-  color: #dc554f;
+  color: #c63e38;
+}
+
+.flash-notice {
+  font-size: 20px;
+  color: #1c8743;
 }
