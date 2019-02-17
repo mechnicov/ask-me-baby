@@ -11,7 +11,7 @@ users = User.all
 
 0.upto(6) do |i|
   user = users[i]
-  avatar_url = "http://zano.ru/avatar/images/100j0#{rand(100..999)}.jpg"
+  avatar_url = Faker::Avatar.image(i, '100x100', 'jpg')
   user.update!(avatar_url: avatar_url)
-  rand(1..100).times { Question.create!(text: Faker::Lorem.question, user: user) }
+  rand(1..30).times { Question.create!(text: Faker::Lorem.question, user: user) }
 end
