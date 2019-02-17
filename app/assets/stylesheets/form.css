@@ -21,6 +21,12 @@
   border-radius: 3px;
   font-size: 16px;
   background: #eccfc3;
+  color: #904c77;
+}
+
+.form-textarea,
+.form-text-field:focus {
+  border: 3px solid #957d95;
 }
 
 .form-action {

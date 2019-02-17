@@ -1,19 +1,21 @@
 require 'openssl'
 
 class User < ApplicationRecord
-  ITERATIONS = 20_000
-  DIGEST = OpenSSL::Digest::SHA256.new
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  VALID_USERNAME_REGEX = /\A\w+\z/
+  ITERATIONS = 20_000.freeze
+  DIGEST = OpenSSL::Digest::SHA256.new.freeze
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
+  VALID_USERNAME_REGEX = /\A\w+\z/.freeze
+  MAX_NAME_LENGTH = 40.freeze
 
   attr_accessor :password
 
   has_many :questions
   validates :username, presence: true, uniqueness: true,
-                       length: { maximum: 40 }, format: { with: VALID_USERNAME_REGEX }
+                       length: { maximum: MAX_NAME_LENGTH },
+                       format: { with: VALID_USERNAME_REGEX }
   validates :email, presence: true, uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX }
-
+  validates :name, presence: true
   validates :password, presence: true, on: :create, confirmation: true
   before_validation :downcase_email_and_username
   before_save :encrypt_password

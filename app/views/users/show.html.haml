@@ -1,6 +1,8 @@
 .user-header.text-center
   %h1.title-medium
     = @user.name
+  .buffer-both
+    = link_to 'Редактировать профиль', edit_user_url(@user)
   .user-image-div
     = image_tag user_avatar(@user), class: 'user-image', alt: '[Фото]'
   %h2.title-small.buffer-both

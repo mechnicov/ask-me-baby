@@ -1,2 +1,6 @@
-%h1 Users#edit
-%p Find me in app/views/users/edit.html.erb
+- provide :submit_button, 'Обновить'
+.container.content-wrapper.buffer-both
+  %h1.title-medium
+    Править профиль
+  .column-1-2
+    = render 'form'
