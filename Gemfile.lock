@@ -50,6 +50,7 @@ GEM
     crass (1.0.4)
     erubi (1.8.0)
     erubis (2.7.0)
+    execjs (2.7.0)
     faker (1.9.3)
       i18n (>= 0.7)
     ffi (1.10.0)
@@ -147,6 +148,8 @@ GEM
     tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    uglifier (4.1.20)
+      execjs (>= 0.3.0, < 3)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -169,6 +172,7 @@ DEPENDENCIES
   pg
   rails (~> 5.2.2)
   rails-i18n (~> 5.1)
+  uglifier
   web-console (>= 3.3.0)
 
 RUBY VERSION

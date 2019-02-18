@@ -10,6 +10,7 @@ gem 'faker'
 gem 'rails-i18n', '~> 5.1'
 gem 'haml-rails', '~> 1.0'
 gem 'pagy'
+gem 'uglifier'
 
 group :development, :test do
   gem 'byebug'
