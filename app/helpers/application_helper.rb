@@ -9,6 +9,14 @@ module ApplicationHelper
     end
   end
 
+  def bgcolor(user)
+    if user.bgcolor.present?
+      user.bgcolor
+    else
+      '#ecb8a5'
+    end
+  end
+
   def question_time(question)
     l(question.created_at, format: '%-d %B %Y %k:%M')
   end

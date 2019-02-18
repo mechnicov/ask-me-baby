@@ -1,4 +1,4 @@
-10.times do
+5.times do
   name  = Faker::Name.name
   username = Faker::Internet.username(name, '_')
   email = Faker::Internet.email(name)
@@ -9,9 +9,10 @@ end
 
 users = User.all
 
-0.upto(6) do |i|
+0.upto(2) do |i|
   user = users[i]
   avatar_url = Faker::Avatar.image(i, '100x100', 'jpg')
-  user.update!(avatar_url: avatar_url)
+  bgcolor = Faker::Color.hex_color
+  user.update!(avatar_url: avatar_url, bgcolor: bgcolor)
   rand(1..30).times { Question.create!(text: Faker::Lorem.question, user: user) }
 end
