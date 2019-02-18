@@ -14,7 +14,6 @@
 .form-textarea,
 .form-text-field {
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
   border: 1px solid #957d95;
   padding: 7.5px 10px;
@@ -28,6 +27,15 @@
 .form-text-field:focus {
   border: 3px solid #957d95;
 }
+
+.form-color-field {
+  width: 150px;
+  height: 35px;
+  box-sizing: border-box;
+  border: .5px solid #957d95;
+  border-radius: 3px;
+}
+
 
 .form-action {
   margin-top: 20px;

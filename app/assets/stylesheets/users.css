@@ -4,18 +4,13 @@
 
 .user-header {
   padding: 20px 0;
-  color: #904c77;
-}
-
-.user-header a {
-  color: #904c77;
 }
 
 .user-image-div {
   width: 100px;
   height: 100px;
   margin: 0 auto;
-  border: 5px solid #957d95;
+  border: 5px solid;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -33,7 +28,6 @@
 
 .user-details {
   padding: 10px 0;
-  background: #ecb8a5;
 }
 
 .user-statistics {
@@ -50,10 +44,6 @@
   padding: 10px;
   margin-left: 10px;
   background: #e49ab0;
-}
-
-.user-questions-pagination {
-
 }
 
 @media (max-width: 960px) {

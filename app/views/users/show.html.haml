@@ -1,18 +1,18 @@
-.user-header.text-center(style="background: #{bgcolor(@user)}")
+.user-header.text-center(style="background: #{bgcolor(@user)}; color: #{fontcolor(@user)}")
   %h1.title-medium
     = @user.name
-  -if current_user == @user
-    .buffer-both
-      = link_to 'Редактировать профиль', edit_user_url(@user)
-    .buffer-both
-      = link_to 'Удалить профиль', @user, method: :delete, data: { confirm: 'Подтвердите удаление профиля' }
-  .user-image-div
+  .user-image-div(style="border-color: #{bordercolor(@user)}")
     = image_tag user_avatar(@user), class: 'user-image', alt: '[Фото]'
   %h2.title-small.buffer-both
     @#{@user.username}
+  -if current_user == @user
+    .buffer-both
+      = link_to 'Редактировать профиль', edit_user_url(@user), style: "color: #{fontcolor(@user)}"
+    .buffer-both
+      = link_to 'Удалить профиль', @user, method: :delete, data: { confirm: 'Подтвердите удаление профиля' }, style: "color: #{fontcolor(@user)}"
   .user-ask-button.container.text-center
     = link_to '¿Есть вопрос?', '', class: 'button button-light', id: 'ask-button'
-.user-details
+.user-details(style="background: #{bgcolor(@user)}; color: #{fontcolor(@user)}")
   .user-statistics.container.text-center
     .column-1-3
       = t(:question, count: @questions_count)
