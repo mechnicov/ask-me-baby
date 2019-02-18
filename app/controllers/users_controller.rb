@@ -35,11 +35,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @pagy, @questions = pagy(@user.questions.order(created_at: :desc), items: 3)
-    @new_question = @user.questions.build
+    @questions = @user.questions
     @questions_count = @questions.count
     @answers_count = @questions.where.not(answer: nil).count
     @unanswered_count = @questions_count - @answers_count
+
+    @pagy, @questions = pagy(@user.questions.order(created_at: :desc), items: 3)
+    @new_question = @user.questions.build
   end
 
   def destroy

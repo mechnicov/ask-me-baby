@@ -23,12 +23,13 @@
   color: #904c77;
 }
 
-.question-answer {
+.question-info {
+  color: #904c77;
+  font-size: 13px;
 }
 
-.question-date {
-  color: #904c77;
-  font-size: 12px;
+.question-info a {
+  font-weight: 700;
 }
 
 .question-actions {

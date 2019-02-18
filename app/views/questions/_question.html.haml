@@ -5,7 +5,9 @@
     - if question.answer.present?
       .question-answer.text-lead
         = question.answer
-    .question-date
+    .question-info
+      = author(question).html_safe
+    .question-info
       = question_time(question)
   - if question.user == current_user
     - edit_icon = question.answer.blank? ? 'reply' : 'pencil'
