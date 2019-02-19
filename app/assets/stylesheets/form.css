@@ -24,8 +24,11 @@
 }
 
 .form-textarea,
-.form-text-field:focus {
-  border: 3px solid #957d95;
+.form-text-field:focus,
+.form-color-field:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #904c77;
+  border-color: #904c77;
 }
 
 .form-color-field {
@@ -48,4 +51,47 @@
 .form-error-message {
   list-style: none;
   margin-bottom: 10px;
+}
+
+.preview {
+  padding-left: 10px;
+}
+
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.radio + label {
+  position: relative;
+  padding: 0 0 0 24px;
+  cursor: pointer;
+}
+.radio + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #904c77;
+  border-radius: 50%;
+  background: #ecb8a5;
+}
+.radio + label:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #904c77;
+  opacity: 0;
+  transition: .2s;
+}
+.radio:checked + label:after {
+  opacity: 1;
+}
+.radio:focus + label:before {
+  box-shadow: 0 0 5px 2px #904c77;
 }

@@ -8,8 +8,6 @@
   -if current_user == @user
     .buffer-both
       = link_to 'Редактировать профиль', edit_user_url(@user), style: "color: #{fontcolor(@user)}"
-    .buffer-both
-      = link_to 'Удалить профиль', @user, method: :delete, data: { confirm: 'Подтвердите удаление профиля' }, style: "color: #{fontcolor(@user)}"
   .user-ask-button.container.text-center
     = link_to '¿Есть вопрос?', '', class: 'button button-light', id: 'ask-button'
 .user-details(style="background: #{bgcolor(@user)}; color: #{fontcolor(@user)}")
