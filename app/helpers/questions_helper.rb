@@ -15,4 +15,8 @@ module QuestionsHelper
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
+
+  def replace_hashtags_with_links(text)
+    text.gsub(HASHTAG_REGEX) { |ht| link_to ht, hashtag_url(ht.delete('#').downcase)}.html_safe
+  end
 end

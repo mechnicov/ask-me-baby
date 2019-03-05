@@ -1,10 +1,10 @@
 .question
   .question-content
     .question-text.text-lead
-      = question.text
+      = replace_hashtags_with_links(question.text)
     - if question.answer.present?
       .question-answer.text-lead
-        = question.answer
+        = replace_hashtags_with_links(question.answer)
     .question-info
       = author(question).html_safe
     .question-info

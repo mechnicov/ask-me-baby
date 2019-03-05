@@ -5,3 +5,6 @@
     .users-list-item
       .user-image-div.user-image-div-small
         = link_to image_tag(user_avatar(user), class: 'user-image'), user_url(user)
+  .buffer-both-large
+    %h1.title-medium Хэштеги
+    = render 'hashtags/hashtag'

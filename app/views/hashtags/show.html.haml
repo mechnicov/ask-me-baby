@@ -1,0 +1,5 @@
+.user-questions.buffer-both
+  .questions-list
+    = render partial: 'questions/question', collection: @questions
+.questions-pagination
+  = pagy_plain_responsive_nav(@pagy).html_safe
