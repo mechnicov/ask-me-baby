@@ -8,12 +8,11 @@ class Question < ApplicationRecord
   validates :text, :user, presence: true, length: { maximum: 255 }
 
   before_save :set_hashtags
-  after_comit :delete_independent_hashtags
+  after_commit :delete_independent_hashtags
 
   def set_hashtags
-    self.hashtags = (self.text.scan(HASHTAG_REGEX) + self.answer.scan(HASHTAG_REGEX).
-                      uniq(&:downcase).
-                      map { |ht| Hashtag.find_or_create_by(name: ht.delete('#')) }
+    self.hashtags = (text.scan(HASHTAG_REGEX) + answer.to_s.scan(HASHTAG_REGEX)).
+                      map { |ht| Hashtag.find_or_create_by(name: ht.downcase.delete('#')) }
   end
 
   def delete_independent_hashtags
