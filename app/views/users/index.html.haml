@@ -1,10 +1,17 @@
 .content-wrapper.buffer-both.text-center
-  .buffer-both
-    %h1.title-medium Наши пользователи
-  - @users.each do |user|
-    .users-list-item
-      .user-image-div.user-image-div-small
-        = link_to image_tag(user_avatar(user), class: 'user-image'), user_url(user)
-  .buffer-both-large
-    %h1.title-medium Хэштеги
-    = render 'hashtags/hashtag'
+  - unless @users.any?
+    .buffer-both-large
+      %p Здесь пока никого нет
+      .buffer-top
+        #{link_to 'Региструйтесь', sign_up_url, class: 'user-index-link'}, чтобы быть первым
+  -else
+    .buffer-both
+      %h1.title-medium Наши пользователи
+      - @users.each do |user|
+        .users-list-item
+          .user-image-div.user-image-div-small
+            = link_to image_tag(user_avatar(user), class: 'user-image'), user_url(user)
+      - if @hashtags.any?
+        .buffer-both-large
+          %h1.title-medium Хэштеги
+          = render 'hashtags/hashtag'

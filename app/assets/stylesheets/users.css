@@ -46,6 +46,15 @@
   background: #e49ab0;
 }
 
+.user-index-link {
+  font-weight: 700;
+}
+
+.user-index-link-spacing {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 @media (max-width: 960px) {
   .user-question-form {
     margin-left: 0;
