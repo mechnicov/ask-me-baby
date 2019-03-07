@@ -9,7 +9,7 @@ class Question < ApplicationRecord
   after_commit :delete_independent_hashtags
 
   def set_hashtags
-    self.hashtags = (text.scan(HASHTAG_REGEX) + answer.to_s.scan(HASHTAG_REGEX)).
+    self.hashtags = "#{text} #{answer}".scan(HASHTAG_REGEX).
                       map { |ht| Hashtag.find_or_create_by(name: ht.downcase.delete('#')) }
   end
 
