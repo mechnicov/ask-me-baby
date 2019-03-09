@@ -17,9 +17,9 @@
             = link_to "¿Спроси вопрос?", root_url
         .header-nav
           - if current_user
-            = render partial: 'common/navbar_logged_in'
+            = render partial: 'partials/navbar_logged_in'
           - else
-            = render partial: 'common/navbar_logged_out'
+            = render partial: 'partials/navbar_logged_out'
     .content
       .container
         - if flash.any?
