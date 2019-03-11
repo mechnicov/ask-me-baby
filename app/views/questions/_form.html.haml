@@ -10,5 +10,8 @@
         = f.label :answer, 'Ответ', class: 'form-label'
         = f.text_area :answer, class: 'form-textarea'
     .form-action.buffer-both
-      = f.submit 'Сохранить', class: 'button button-dark button-small'
+      - if current_user.present?
+        = f.submit 'Сохранить', class: 'button button-dark button-small'
+      - else
+        = invisible_recaptcha_tags text: '¿Спроси вопрос?', class: 'button button-dark button-small'
       = link_to 'Вернуться', user_path(@question.user), class: 'button button-dark button-small'

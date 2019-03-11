@@ -27,7 +27,10 @@
           = f.label "Вопрос пользователю @#{@user.username}", class: 'form-label'
           = f.text_area :text, class: 'form-textarea'
         .form-action
-          = submit_tag '¿Спроси вопрос?', class: 'button button-small button-dark'
+          - if current_user.present?
+            = submit_tag '¿Спроси вопрос?', class: 'button button-small button-dark'
+          - else
+            = invisible_recaptcha_tags text: '¿Спроси вопрос?', class: 'button button-small button-dark'
 .column-3-4
   .user-questions.buffer-both
     .questions-list
