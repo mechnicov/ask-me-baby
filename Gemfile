@@ -12,7 +12,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'haml-rails', '~> 1.0'
 gem 'pagy'
 gem 'uglifier'
-gem 'recaptcha'#, require: 'recaptcha/rails'
+gem 'recaptcha'
 
 group :development, :test do
   gem 'byebug'
