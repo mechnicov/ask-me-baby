@@ -18,18 +18,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'Регистрация прошла успешно'
+      redirect_to root_url, notice: I18n.t('controllers.users.created')
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
-      redirect_to user_url(@user), notice: 'Данные обновлены'
+      redirect_to user_url(@user), notice: I18n.t('controllers.users.updated')
     else
       render :edit
     end
@@ -47,7 +46,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root_url, notice: 'Аккаунт удалён'
+    redirect_to root_url, notice: I18n.t('controllers.users.destroyed')
   end
 
   private
@@ -67,6 +66,6 @@ class UsersController < ApplicationController
   end
 
   def redirect_current_user
-    redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
+    redirect_to root_url, alert: I18n.t('controllers.users.logged_in') if current_user.present?
   end
 end

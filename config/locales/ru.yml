@@ -3,6 +3,38 @@ ru:
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
+    models:
+      user: Пользователь
+      question: Вопрос
+      hashtag: Хэштег
+    attributes:
+      user:
+        email: Адрес электронной почты
+        username: Никнейм
+        name: Имя
+        avatar_url: Адрес аватара
+        bgcolor: Фон
+        fontcolor: Шрифт
+        bordercolor: Кайма аватара
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      question:
+        text: Текст вопроса
+        answer: Ответ
+  controllers:
+    users:
+      created: Регистрация прошла успешно
+      updated: Данные обновлены
+      destroyed: Аккаунт удалён
+      logged_in: Вы уже залогинены
+    sessions:
+      log_in: Вы успешно вошли на сайт
+      log_out: Успешный выход
+      wrong_data: Неверные почта и/или пароль
+    questions:
+      created: Вопрос задан
+      updated: Вопрос сохранён
+      destroyed: Вопрос удалён
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -32,19 +64,19 @@ ru:
     one: '%{count} вопрос'
     few: '%{count} вопроса'
     many: '%{count} вопросов'
-    other: 'вопросы'
+    other: '%{count} вопроса'
   unanswered:
     zero: 'Неотвеченных нет'
     one: '%{count} неотвеченный'
     few: '%{count} неотвеченных'
     many: '%{count} неотвеченных'
-    other: 'неотвеченные'
+    other: '%{count} неотвеченных'
   answer:
     zero: 'Ответов нет'
     one: '%{count} ответ'
     few: '%{count} ответа'
     many: '%{count} ответов'
-    other: 'ответы'
+    other: '%{count} ответа'
   date:
     month_names:
       - 
@@ -65,3 +97,7 @@ ru:
       prev: '←'
       next: '→'
       gap: '...'
+  are_you_sure: Вы уверены?
+  recaptcha:
+    errors:
+      verification_failed: Подтвердите, что Вы не робот

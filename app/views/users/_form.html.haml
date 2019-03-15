@@ -2,17 +2,17 @@
   = form_for @user do |f|
     = render 'partials/error_messages', object: f.object
     .form-field
-      = f.label :email, 'Электронная почта', class: 'form-label'
+      = f.label :email, class: 'form-label'
       = f.text_field :email, class: 'form-text-field'
     .form-field
-      = f.label :username, 'Никнейм', class: 'form-label'
+      = f.label :username, class: 'form-label'
       = f.text_field :username, class: 'form-text-field', id: 'username'
     .form-field
-      = f.label :name, 'Имя', class: 'form-label'
+      = f.label :name, class: 'form-label'
       = f.text_field :name, class: 'form-text-field', id: 'name'
     - if current_user
       .form-field
-        = f.label :avatar_url, 'URL вашей аватары', class: 'form-label'
+        = f.label :avatar_url, class: 'form-label'
         = f.text_field :avatar_url, class: 'form-text-field', id: 'avatar_url'
       .form-field
         %input#default-colors.radio(name="colors" type="radio")
@@ -23,23 +23,23 @@
       #color-fields
         .column-1-3
           .form-field
-            = f.label :bgcolor, 'Фон страницы', class: 'form-label'
+            = f.label :bgcolor, class: 'form-label'
             = f.color_field :bgcolor, value: bgcolor(@user), class: 'form-color-field', id: 'bgcolor'
         .column-1-3
           .form-field
-            = f.label :fontcolor, 'Шрифт', class: 'form-label'
+            = f.label :fontcolor, class: 'form-label'
             = f.color_field :fontcolor, value: fontcolor(@user), class: 'form-color-field', id: 'fontcolor'
         .column-1-3
           .form-field
-            = f.label :bordercolor, 'Кайма аватара', class: 'form-label'
+            = f.label :bordercolor, class: 'form-label'
             = f.color_field :bordercolor, value: bordercolor(@user), class: 'form-color-field', id: 'bordercolor'
     .form-field
-      = f.label :password, 'Пароль', class: 'form-label'
+      = f.label :password, class: 'form-label'
       = f.password_field :password, class: 'form-text-field'
     .form-field
-      = f.label :password_confirmation, 'Подтверждение пароля', class: 'form-label'
+      = f.label :password_confirmation, class: 'form-label'
       = f.password_field :password_confirmation, class: 'form-text-field'
     .form-action
       = f.submit yield(:submit_button), class: 'button button-small button-dark'
       - if current_user
-        = link_to 'Удалить профиль', @user, method: :delete, data: { confirm: 'Подтвердите удаление профиля' }, class: 'button button-small button-dark'
+        = link_to 'Удалить профиль', @user, method: :delete, data: { confirm: t('are_you_sure') }, class: 'button button-small button-dark'
