@@ -8,6 +8,7 @@
 
 .question-content {
   padding: 10px 15px;
+  word-wrap: break-word;
 }
 
 .question + .question {
