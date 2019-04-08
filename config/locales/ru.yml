@@ -35,6 +35,8 @@ ru:
       created: Вопрос задан
       updated: Вопрос сохранён
       destroyed: Вопрос удалён
+    hashtags:
+      not_found: 'Хэштег %{ht} отсутствует в базе данных'
   errors:
     format: "%{attribute} %{message}"
     messages:

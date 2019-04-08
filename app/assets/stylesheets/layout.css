@@ -46,9 +46,11 @@ a {
 .flash-alert {
   font-size: 20px;
   color: #c63e38;
+  word-wrap: break-word;
 }
 
 .flash-notice {
   font-size: 20px;
   color: #1c8743;
+  word-wrap: break-word;
 }
